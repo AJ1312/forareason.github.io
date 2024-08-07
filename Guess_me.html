@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACM Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .password-input {
+            font-size: 1rem;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+        .unlock-button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .unlock-button:hover {
+            background-color: #555;
+        }
+        .message {
+            margin-top: 10px;
+            color: red;
+        }
+        .image-section {
+            display: none;
+            margin-top: 20px;
+        }
+        .image-section h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="password" id="password" class="password-input" placeholder="Enter Password" />
+        <button class="unlock-button" onclick="unlockPage()">Unlock</button>
+        <div class="message" id="message"></div>
+
+        <!-- Image Section -->
+        <div class="image-section" id="image-section">
+            <h1>THIS IS YOUR ANWSER</h1>
+            <img src="https://media.licdn.com/dms/image/D5612AQHCGNif4O5uYA/article-cover_image-shrink_720_1280/0/1697733696119?e=2147483647&v=beta&t=DA_a_DMeb4LmLyapilzxQKoa7E5jjmsg2kQdVKwv23c" alt="User Image" id="user-image" />
+        </div>
+    </div>
+
+    <script>
+        function unlockPage() {
+            const passwordInput = document.getElementById('password');
+            const imageSection = document.getElementById('image-section');
+            const message = document.getElementById('message');
+            
+            const correctPassword = 'thala'; // Updated password
+
+            if (passwordInput.value === correctPassword) {
+                imageSection.style.display = 'block';  // Reveal the image section
+                message.textContent = '';  // Clear any error message
+                passwordInput.style.display = 'none'; // Hide the password input
+                document.querySelector('.unlock-button').style.display = 'none'; // Hide the unlock button
+            } else {
+                message.textContent = 'Incorrect password. Please try again.'; // Show error message
+            }
+        }
+    </script>
+</body>
+</html>
