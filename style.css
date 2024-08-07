@@ -45,10 +45,11 @@ body {
     margin-top: 20px;
 }
 
-.image-section h1 {
+.image-section h6 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
+text-align: left;
 }
 
 .image-section img {
